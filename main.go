@@ -7,16 +7,16 @@ import (
 	"fmt"
 	"os"
 
-	updateProv "github.com/dr/packer-plugin-win-update/provisioner/update"
-	updateVersion "github.com/dr/packer-plugin-win-update/version"
+	"github.com/dr/packer-plugin-win-update/provisioner/update"
+	"github.com/dr/packer-plugin-win-update/version"
 
 	"github.com/hashicorp/packer-plugin-sdk/plugin"
 )
 
 func main() {
 	pps := plugin.NewSet()
-	pps.RegisterProvisioner("my-provisioner", new(updateProv.Provisioner))
-	pps.SetVersion(updateVersion.PluginVersion)
+	pps.RegisterProvisioner(plugin.DEFAULT_NAME, new(update.Provisioner))
+	pps.SetVersion(version.PluginVersion)
 	err := pps.Run()
 	if err != nil {
 		fmt.Fprintln(os.Stderr, err.Error())
