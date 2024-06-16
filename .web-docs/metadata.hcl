@@ -7,7 +7,7 @@
 integration {
   name = "Integration Template"
   description = "This is an integration template"
-  identifier = "packer/hashicorp/scaffolding"
+  identifier = "packer/hashicorp/update"
   flags = [
     # Remove if the plugin does not conform to the HCP Packer requirements.
     #
